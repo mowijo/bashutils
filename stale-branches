@@ -1,1 +1,1 @@
-git for-each-ref --sort=committerdate --format='%(committerdate:short) %(refname:short) %(committeremail)' | awk '{if($1 < "'`date -d "30 days ago" +"%Y-%m-%d"`'") {print $0}}' | column -t
+git for-each-ref --sort=committerdate --format='%(committerdate:short);%(refname:short);%(committername);%(committeremail)' | awk '{if($1 < "'`date -d "30 days ago" +"%Y-%m-%d"`'") {print $0}}' | column -t -s ";"
